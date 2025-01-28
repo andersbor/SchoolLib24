@@ -14,16 +14,30 @@
             }
         }
 
-        public Teacher(int id, string name, int salary): base(id, name)
+        public Teacher(int id, string name, GenderType gender, int salary): base(id, name, gender)
         {
             Salary = salary;
         }
 
-        public Teacher() : this(-1, "NoName", 0) { }
+        public Teacher() : this(-1, "NoName", GenderType.Other, 0) { }
 
         public override string ToString()
         {
             return base.ToString() + ", Salary: " + Salary;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (obj == this) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            Teacher other = (Teacher)obj;
+            return Id == other.Id ;
+        }
+
+        public override int GetHashCode()
+        {
+            return Id;
         }
     }
 }

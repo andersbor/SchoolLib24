@@ -8,7 +8,7 @@
         [TestInitialize]
         public void TestInitialize()
         {
-            person = new Person(1, "B");
+            person = new Person(1, "B", GenderType.Male);
         }
 
         [TestMethod()]
@@ -16,6 +16,7 @@
         {
             Assert.AreEqual(1, person.Id);
             Assert.AreEqual("B", person.Name);
+            Assert.AreEqual(GenderType.Male, person.Gender);
         }
 
         [TestMethod]

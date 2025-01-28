@@ -1,9 +1,10 @@
 ﻿namespace SchoolLib24
 {
-    public class Student: Person
+
+    public class Student : Person
     {
         private int _semester;
-        
+
         public int Semester
         {
             get => _semester;
@@ -14,12 +15,12 @@
             }
         }
 
-        public Student(int id, string name, int semester): base(id, name)
+        public Student(int id, string name, GenderType gender, int semester) : base(id, name, gender)
         {
             Semester = semester;
         }
 
-        public Student() : this(-1, "NoName", 1) { }
+        public Student() : this(-1, "NoName", GenderType.Other, 1) { }
 
         public override string ToString()
         {

@@ -8,7 +8,7 @@
         [TestInitialize]
         public void TestInitialize()
         {
-            student = new Student(1, "C", semester: 1);
+            student = new Student(1, "C", GenderType.Other, semester: 1);
         }
 
         [TestMethod()]

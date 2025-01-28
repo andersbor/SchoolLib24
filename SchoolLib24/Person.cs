@@ -1,5 +1,7 @@
 ﻿namespace SchoolLib24
 {
+    public enum GenderType { Male, Female, Other }
+
     public class Person
     {
         public int Id { get; set; }
@@ -15,13 +17,17 @@
                 _name = value;
             }
         }
-        public Person(int id, string name)
+
+        public GenderType Gender { get; set; }
+
+        public Person(int id, string name, GenderType gender)
         {
             Id = id;
             Name = name;
+            Gender = gender;
         }
 
-        public Person() : this(-1, "NoName") { }
+        public Person() : this(id: -1, name: "NoName", GenderType.Other) { }
 
         public override string ToString()
         {

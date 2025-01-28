@@ -8,7 +8,7 @@
         [TestInitialize]
         public void TestInitialize()
         {
-            teacher = new Teacher(1, "A", 0);
+            teacher = new Teacher(1, "A", GenderType.Female, 0);
         }
 
         [TestMethod()]
